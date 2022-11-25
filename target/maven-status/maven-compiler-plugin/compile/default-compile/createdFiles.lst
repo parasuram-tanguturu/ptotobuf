@@ -1,5 +1,5 @@
-PersonOuterClass$Person.class
-PersonOuterClass$Person$Builder.class
-PersonOuterClass.class
-PersonOuterClass$Person$1.class
-PersonOuterClass$PersonOrBuilder.class
+com/parasuram/PersonOuterClass.class
+com/parasuram/Person$Builder.class
+com/parasuram/PersonOrBuilder.class
+com/parasuram/Person.class
+com/parasuram/Person$1.class
