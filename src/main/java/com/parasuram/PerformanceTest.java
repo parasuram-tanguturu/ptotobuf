@@ -17,7 +17,7 @@ public class PerformanceTest {
         person.setAge(32);
         ObjectMapper mapper=new ObjectMapper();
 
-        Runnable runnable1=()->{
+        Runnable json=()->{
             try {
                 byte[] bytes = mapper.writeValueAsBytes(person);
                 JPerson person1 = mapper.readValue(bytes, JPerson.class);
@@ -26,7 +26,7 @@ public class PerformanceTest {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
+        };
 
 
         //protobuf
@@ -35,7 +35,7 @@ public class PerformanceTest {
                 .setAge(32)
                 .build();
 
-        Runnable runnable2=()->{
+        Runnable proto=()->{
             try {
                 byte[] bytes = ram.toByteArray();
                 Person.parseFrom(bytes);
@@ -43,16 +43,20 @@ public class PerformanceTest {
                 e.printStackTrace();
             }
         };
+
+        for (int i=0;i<=5;i++){
+            runPeformaceTest(json,"JSON");
+            runPeformaceTest(proto,"PROTO");
+        }
+
     }
     
     private static void runPeformaceTest(Runnable runnable,String method){
             long time1=System.currentTimeMillis();
-            for (int i=1;i<1_000_000;i++){
+            for (int i=1;i<5_000_000;i++){
                 runnable.run();
             }
             long time2=System.currentTimeMillis();
-            System.out.println(
-                    method+" : "+(time2-time1)+"ms"
-            );
+            System.out.println(method+" : "+(time2-time1)+"ms");
     }
 }
