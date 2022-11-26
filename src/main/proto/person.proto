@@ -12,4 +12,19 @@ message Person {
 
   //age field
   int32 age=2;
+
+  Address address=3;
+  Car car=4;
+}
+
+message Address{
+  int32 postbox=1;
+  string street=2;
+  string city=3;
+}
+
+message Car{
+  string make=1;
+  string model=2;
+  int32 year=3;
 }
