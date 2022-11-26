@@ -1,4 +1,4 @@
-package com.parasuram;
+package com.parasuram.protobuf;
 
 import com.parasuram.models.Address;
 import com.parasuram.models.Car;
