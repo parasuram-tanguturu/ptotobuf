@@ -28,3 +28,7 @@ message Car{
   string model=2;
   int32 year=3;
 }
+
+message Dealer{
+  map<int32,Car> model=1;
+}
