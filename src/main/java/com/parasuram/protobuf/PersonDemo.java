@@ -1,5 +1,6 @@
 package com.parasuram.protobuf;
 
+import com.google.protobuf.Int32Value;
 import com.parasuram.models.Person;
 
 import java.io.IOException;
@@ -14,6 +15,7 @@ public class PersonDemo{
         Person ram1 = Person.newBuilder()
                 .setName("ram")
                 .setAge(32)
+                //.setAge(Int32Value.newBuilder().setValue(23).build())
                 .build();
         System.out.println(ram1.toString());
 
