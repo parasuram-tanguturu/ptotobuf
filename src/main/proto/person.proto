@@ -3,39 +3,18 @@ syntax="proto3";
 option java_multiple_files=true;
 option java_package="com.parasuram.models";
 
+import "common/car.proto";
+import "common/address.proto";
 /*
 this is person proto
  */
 message Person {
   //name field
   string name=1;
-
   //age field
   int32 age=2;
-
-  Address address=3;
-  repeated Car car=4;
+  common.Address address=3;
+  repeated common.Car car=4;
 }
 
-message Address{
-  int32 postbox=1;
-  string street=2;
-  string city=3;
-}
 
-message Car{
-  string make=1;
-  string model=2;
-  int32 year=3;
-  Bodystyle bodyStyle=4;
-}
-
-message Dealer{
-  map<int32,Car> model=1;
-}
-
-enum Bodystyle{
-  UNKNOWN=0;
-  COUPE=1;
-  SUV=2;
-}
