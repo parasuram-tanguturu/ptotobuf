@@ -14,7 +14,7 @@ message Person {
   int32 age=2;
 
   Address address=3;
-  Car car=4;
+  repeated Car car=4;
 }
 
 message Address{
