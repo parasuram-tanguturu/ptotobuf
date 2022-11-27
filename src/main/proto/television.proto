@@ -24,9 +24,22 @@ enum Type{
   OLED=2;
 }*/
 
+//v3
+/*message  Television{
+  string brand=1;
+  Type type=3;
+}
 
+enum Type{
+  HD=0;
+  UHD=1;
+  OLED=2;
+}*/
+
+//v4
 message  Television{
   string brand=1;
+  int32 price=2;
   Type type=3;
 }
 
