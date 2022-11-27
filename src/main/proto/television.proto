@@ -5,10 +5,10 @@ option  java_package="com.parasuram.models";
 
 
 //V1
-message Television{
+/*message Television{
   string  brand=1;
   int32 year=2;
-}
+}*/
 
 //v2
 /*
@@ -23,3 +23,15 @@ enum Type{
   UHD=1;
   OLED=2;
 }*/
+
+
+message  Television{
+  string brand=1;
+  Type type=3;
+}
+
+enum Type{
+  HD=0;
+  UHD=1;
+  OLED=2;
+}
