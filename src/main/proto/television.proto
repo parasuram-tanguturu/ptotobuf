@@ -39,6 +39,8 @@ enum Type{
 //v4
 message  Television{
   string brand=1;
+  reserved 2;
+  reserved "model","year";
   int32 price=2;
   Type type=3;
 }
