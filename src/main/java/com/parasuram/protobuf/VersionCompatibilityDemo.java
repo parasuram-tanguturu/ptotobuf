@@ -21,7 +21,7 @@ public class VersionCompatibilityDemo {
                         .build();
 
            Files.write(pathV1,television.toByteArray());*/
-        System.out.println(Television.parseFrom(Files.readAllBytes(pathV1)));
+        System.out.println(Television.parseFrom(Files.readAllBytes(pathV2)));
 
        /* Television television=Television.newBuilder()
                 .setBrand("sony")
